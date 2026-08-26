@@ -148,7 +148,8 @@ def test_pages_workflow():
     yml = ROOT / ".github" / "workflows" / "pages.yml"
     if yml.exists():
         text = yml.read_text()
-        ok("branches: [main]" in text, "Pages workflow (if present) deploys from main")
+        ok("branches: [main]" in text, "Pages workflow deploys from main")
+        ok("path: docs" in text, "Pages artifact is docs/")
 
 
 def main():
