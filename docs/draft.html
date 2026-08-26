@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFFL Draft Room</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="logo.css">
+</head>
+<body>
+<div class="frame">
+
+  <header class="topbar">
+    <a class="brand brand-link" href="index.html">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div>
+        <h1>AFFL <span>Draft</span></h1>
+        <div class="sub" id="page-sub">every draft since 2014</div>
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Archive</a>
+      <a href="records.html">Records</a>
+      <a href="teams.html">Teams</a>
+      <a href="awards.html">Awards</a>
+      <a href="draft.html" class="on">Draft</a>
+      <a href="scoreboard.html">Scoreboard</a>
+    </nav>
+  </header>
+
+  <div class="picker-row">
+    <div class="picker-label">Season</div>
+    <div class="week-picker" id="year-picker"></div>
+  </div>
+
+  <section class="kpi-row" id="draft-kpis"></section>
+
+  <section class="second-grid">
+    <div class="card">
+      <div class="card-head">
+        <div><h2>Spend vs Return</h2><div class="card-sub" id="spend-sub">draft outlay against points those players produced</div></div>
+      </div>
+      <div class="chart-wrap xtall"><canvas id="spend-chart"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div><h2>Value Board</h2><div class="card-sub">points above replacement &middot; a cheap QB is not a steal when replacement QBs already score 250</div></div>
+      </div>
+      <div class="mini-tables">
+        <div>
+          <h3 class="g">Steals</h3>
+          <table class="tbl" id="steals-tbl"><tbody></tbody></table>
+        </div>
+        <div>
+          <h3 class="r">Busts</h3>
+          <table class="tbl" id="busts-tbl"><tbody></tbody></table>
+        </div>
+      </div>
+      <div class="draft-note" id="baseline-note"></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <div><h2>The Board</h2><div class="card-sub" id="board-sub">every pick in order</div></div>
+      <input id="draft-search" class="team-select" type="search" placeholder="Search picks…" aria-label="Search picks">
+    </div>
+    <div class="table-scroll">
+      <table class="tbl" id="board-tbl">
+        <thead><tr><th>#</th><th>Player</th><th>Pos</th><th>NFL</th><th>Drafted By</th><th id="cost-th">Cost</th><th>Season Pts</th><th>PAR</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <button class="pp-more" id="board-more">Show more</button>
+  </section>
+
+  <footer class="foot">
+    <img class="foot-banner" src="logos/affl-chrome.jpg" alt="AFFL">
+    <div>AFFL History · Draft Room · 2014–2025</div>
+  </footer>
+</div>
+<script src="chart.umd.min.js?v=1"></script>
+<script src="common.js?v=2"></script>
+<script src="draft.js?v=4"></script>
+</body>
+</html>
