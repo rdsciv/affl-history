@@ -4,7 +4,7 @@ The AFFL history book — ESPN league **51418**, **non-PPR**, seasons **2014–2
 
 This repo is a standalone archive forked from [rdsciv/affl-analytics](https://github.com/rdsciv/affl-analytics). It is not a card on the live analytics History page.
 
-**Pages (when enabled):** https://rdsciv.github.io/affl-history/
+**Live:** https://rdsciv.github.io/affl-history/
 
 ## What is here
 
@@ -32,7 +32,7 @@ Then open http://localhost:8788/
 
 ## GitHub Pages
 
-Same workflow as affl-analytics: push `main`, deploy the `site/` folder via `.github/workflows/pages.yml`.
+Served from `main` `/docs` (a published copy of `site/`). URL: https://rdsciv.github.io/affl-history/
 
 ## Source
 

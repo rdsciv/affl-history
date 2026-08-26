@@ -138,9 +138,17 @@ def test_franchise_metadata():
 
 def test_pages_workflow():
     print("GitHub Pages deploy")
-    yml = (ROOT / ".github" / "workflows" / "pages.yml").read_text()
-    ok("path: site" in yml, "Pages artifact is site/")
-    ok("branches: [main]" in yml, "Pages deploys from main")
+    docs = ROOT / "docs"
+    ok((docs / "index.html").exists(), "docs/index.html exists for Pages")
+    ok((docs / ".nojekyll").exists(), "docs/.nojekyll so Pages serves the SPA as-is")
+    ok((docs / "history.json").exists(), "docs/history.json is published")
+    year_files = sorted(int(p.stem) for p in (docs / "years").glob("*.json"))
+    ok(year_files == list(range(2014, 2026)), f"docs/years is 2014–2025 ({year_files})")
+    ok(not (docs / "years" / "2026.json").exists(), "docs has no 2026.json")
+    yml = ROOT / ".github" / "workflows" / "pages.yml"
+    if yml.exists():
+        text = yml.read_text()
+        ok("branches: [main]" in text, "Pages workflow (if present) deploys from main")
 
 
 def main():
