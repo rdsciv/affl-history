@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFFL Scoreboard</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="logo.css">
+</head>
+<body>
+<div class="frame">
+
+  <header class="topbar">
+    <a class="brand brand-link" href="index.html">
+      <div class="brand-mark" aria-hidden="true"></div>
+      <div>
+        <h1>AFFL <span>Scoreboard</span></h1>
+        <div class="sub" id="sb-sub">every lineup · every week</div>
+      </div>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Archive</a>
+      <a href="records.html">Records</a>
+      <a href="teams.html">Teams</a>
+      <a href="awards.html">Awards</a>
+      <a href="draft.html">Draft</a>
+      <a href="scoreboard.html" class="on">Scoreboard</a>
+    </nav>
+  </header>
+
+  <div class="picker-row">
+    <div class="picker-label">Season</div>
+    <div class="week-picker" id="year-picker"></div>
+  </div>
+  <div class="picker-row">
+    <div class="picker-label">Week</div>
+    <div class="week-picker" id="week-picker"></div>
+  </div>
+
+  <section class="sb-grid" id="sb-grid"></section>
+
+  <footer class="foot">
+    <img class="foot-banner" src="logos/affl-chrome.jpg" alt="AFFL">
+    <div>AFFL History · Scoreboard · 2014–17 scores only (no invented benches)</div>
+  </footer>
+</div>
+<script src="common.js?v=2"></script>
+<script src="scoreboard.js?v=2"></script>
+</body>
+</html>
